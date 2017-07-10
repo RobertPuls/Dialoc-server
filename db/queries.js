@@ -4,9 +4,6 @@ module.exports = {
   getUsers: function() {
     return knex("user");
   },
-  getUser: function(user_id) {
-    return knex("user").where("id", user_id).first();
-  },
   getUserByEmail: function(user_email) {
     return knex("user").where("email", user_email).first();
   },
@@ -27,5 +24,8 @@ module.exports = {
   },
   updateLocation: function(local_id) {
     return knex("location").increment("rating", 1).where("id", local_id).returning("*");
-  }
+  },
+  testMethod: function(id) {
+    return console.log(id);
+  },
 };
